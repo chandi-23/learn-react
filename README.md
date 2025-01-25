@@ -1,9 +1,9 @@
 ## Personal Information:
 
-Full Name: Enter Your Full Name
+Full Name: Chandresh Lokesha
 
 ## Getting Started
-First, fork this repository and clone it to your local machine.
+clone this repo to your local machine.
 
 Then, run the development server:
 
@@ -15,32 +15,61 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the an image displayed.
 
-Next, create a new branch using the following command:
+Next, checkout to modified branch:
 
-`$ git checkout –b mmddyyyy`
-
-Add your name to the README.md file.
-
-Add modified/new files to branch using:
-
-`$ git add /path/to/file`
-
-`$ git commit -m "message"`
-
-Push new branch to origin (first time pushing to branch):
-
-`$ git push origin branch-name`
-
-Standard push (for subsequent pushes):
-
-`$ git push`
+`$ git checkout mmddyyyy`
 
 The file `pages/index.js` is the starting page of the app.
 
-## Learn More
+---
 
-To learn more about React.js, take a look at the [React Documentation](https://legacy.reactjs.org/docs/getting-started.html#learn-react)
+## Components Overview
 
-## What to Submit?
+### 1. **Gallery Props Component**
+**File:** `gallery_props.tsx`
 
-Submit all changes made to files in `src/pages/qcomps` in Canvas class activity for the day.
+This file demonstrates:
+- Passing **props** to a React component (`GallerySection`).
+- Handling default and custom props.
+- Displaying structured information about a scientist using a reusable component.
+
+**Key Features:**
+- Accepts a `scientist` object and dynamically displays its details.
+- Includes support for displaying images and detailed labels.
+- Example use case: Rendering information about notable individuals.
+
+---
+
+### 2. **List Keys and ID Component**
+**File:** `list_keys_id.tsx`
+
+This file highlights:
+- The importance of using **unique keys** when rendering lists in React.
+- How `key` helps React optimize rendering for dynamic lists.
+
+**Key Features:**
+- Demonstrates rendering a list of people with their names, professions, and accomplishments.
+- Uses a unique `id` for each list item as the `key`.
+- Showcases reusable components for clean and structured code.
+
+**Best Practices Illustrated:**
+- Always use a unique identifier (like `id`) for keys in lists to avoid React warnings and optimize performance.
+- Avoid using array indices unless the list is static and never changes.
+
+---
+
+### 3. **Recipes Component**
+**File:** `recipes.tsx`
+
+This file showcases:
+- Managing and displaying data using TypeScript interfaces.
+- Passing structured data (`recipes` array) to child components.
+- Rendering nested components to handle different parts of a recipe, such as the name and ingredients.
+
+**Key Features:**
+- Contains reusable components:
+  - `RecipeSection`: Displays a single recipe's name and ingredients.
+  - `RecipeItems`: Converts a `Set` of ingredients into a list.
+- Demonstrates handling `Set` types in TypeScript with proper iteration.
+- Provides a dynamic way to render recipes from an array of objects.
+---
