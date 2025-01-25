@@ -73,6 +73,14 @@ export function Gallery_Old() {
   );
 }
 
+/**
+ * The `ListItem` component renders a single list item with a 
+ * label and corresponding content. It is designed to display a 
+ * pair of related information (e.g., Profession and its value).
+ * 
+ * @param label - The descriptive label for the content (e.g., "Profession:").
+ * @param content - The actual content to be displayed alongside the label.
+ */
 export function ListItem({label, content}: ListItemProps){
   return (
     <li>
@@ -81,6 +89,16 @@ export function ListItem({label, content}: ListItemProps){
   );
 }
 
+/**
+ * The `GallerySection` component renders a detailed profile of a scientist.
+ * It displays the scientist's name, image, and other notable details such as profession, 
+ * awards, and discoveries. This component leverages the `ListItem` component 
+ * to structure the additional information in a list.
+ * 
+ * @param scientist - The scientist object containing details like name, profession, 
+ * awards, and discoveries.
+ * @param size - The size of the profile image (defaults to 70 pixels).
+ */
 export function GallerySection({scientist, size=70 }: GalleryProps){
   return (
     <section className = "profile">
@@ -101,6 +119,11 @@ export function GallerySection({scientist, size=70 }: GalleryProps){
   );
 }
 
+/**
+ * The `Gallery` component is the main container for displaying a list of notable scientists.
+ * It maps through the `scientists` array and renders a `GallerySection` for each scientist.
+ * This component serves as the entry point for displaying all the scientist profiles.
+ */
 export default function Gallery(){
   return(
     <div>
@@ -111,5 +134,3 @@ export default function Gallery(){
     </div>
   );
 }
-
-

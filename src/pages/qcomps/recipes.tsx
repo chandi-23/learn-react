@@ -14,6 +14,13 @@ export const recipes = [{
   ingredients: new Set(['chickpeas', 'olive oil', 'garlic cloves', 'lemon', 'tahini'])
 }];
 
+/**
+ * The `RecipeItems` component renders a list of ingredients.
+ * It accepts a set of ingredients, converts it to an array, and maps over it to 
+ * create `<li>` elements for each ingredient.
+ * 
+ * @param ingredients - A Set of strings representing the recipe ingredients.
+ */
 function RecipeItems({ ingredients }: { ingredients: Set<string> }) {
   return (
     <div>
@@ -26,6 +33,14 @@ function RecipeItems({ ingredients }: { ingredients: Set<string> }) {
   );
 }
 
+/**
+ * The `RecipeSection` component renders the details of a single recipe.
+ * It displays the recipe name as a heading and uses the `RecipeItems` component to 
+ * list its ingredients.
+ * 
+ * @param recipe - An object containing details about the recipe, 
+ * including its name and ingredients.
+ */
 function RecipeSection({recipe}:RecipeProps){
   return (
     <div>
@@ -35,6 +50,11 @@ function RecipeSection({recipe}:RecipeProps){
   );
 }
 
+/**
+ * The `RecipeList` component is the main container for displaying a list of recipes.
+ * It iterates over the `recipes` array and renders a `RecipeSection` for each recipe.
+ * This component serves as the entry point for displaying all recipes in a structured format.
+ */
 export default function RecipeList() {
   return (
     <div>
