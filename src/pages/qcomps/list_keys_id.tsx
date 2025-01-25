@@ -1,3 +1,5 @@
+import { ListItem } from "./gallery_props";
+
 export const people = [{
   id: 0,
   name: 'Creola Katherine Johnson',
@@ -12,13 +14,27 @@ export const people = [{
   imageId: 'YfeOqp2'
 }];
 
-function getImageUrl(imageId: string) {
+export function getImageUrl(imageId: string) {
   return "https://i.imgur.com/" + imageId + "s.jpg"
 }
+
 export default function List() {
-  const listItems = people.map(person =>
-    <li>
-    </li>
+  return(
+    <div>
+      <ul>
+      {people.map((person) => (
+        <div key={person.id}>
+          <h2> {person.name}</h2>
+          <img
+          src = {getImageUrl(person.imageId)}
+          />
+          <ListItem label="Profession: " content={person.profession}/>
+          <ListItem label="Accomplishment: " content={person.accomplishment}/>
+        </div>
+      ))}
+      </ul>
+      
+    </div>
   );
-  return <ul>{listItems}</ul>;
 }
+
