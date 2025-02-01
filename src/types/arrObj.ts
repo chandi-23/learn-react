@@ -1,4 +1,10 @@
+export interface artworks{
+    id: number, 
+    title: string, 
+    seen: boolean
+}
+
 export interface ItemListProps { 
-    artworks: Array<{id: number, title: string, seen: boolean}>, 
+    artworks: artworks[], 
     onToggle:  (artWorkId: number, nextSeen: boolean) => void 
 }

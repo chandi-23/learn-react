@@ -11,9 +11,12 @@ export default function Scoreboard() {
     lastName: 'Wilson',
     likescore: 10,
   });
-
+  
   function handlePlusClick() {
-    player.likescore++;
+    setPlayer((prevPlayer) => ({
+      ...prevPlayer,
+      likescore: prevPlayer.likescore + 1,
+    }));
   }
 
   function handleFirstNameChange(e: { target: { value: string; }; }) {
@@ -24,7 +27,10 @@ export default function Scoreboard() {
   }
 
   function handleLastNameChange(e: { target: { value: string; }; }) {
-    player.lastName = e.target.value;
+    setPlayer((prevPlayer) => ({
+      ...prevPlayer,
+      lastName: e.target.value,
+    }));
   }
 
   return (
